@@ -9,11 +9,16 @@
     "url": "https://amonigor.dev"
   },
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && npm run services:wait:database && next dev",
     "build": "next build",
     "start": "next start",
-    "test": "concurrently -n next,vitest --hide next -k -s command-vitest \"next dev\" \"vitest run --no-file-parallelism\"",
+    "test": "npm run services:up && concurrently -n next,vitest --hide next -k -s command-vitest \"next dev\" \"vitest run --no-file-parallelism\"",
+    "posttest": "npm run services:stop",
     "test:watch": "vitest --no-file-parallelism",
+    "services:up": "docker compose -p expense-manager -f infra/compose.yaml up -d",
+    "services:stop": "docker compose -p expense-manager -f infra/compose.yaml stop",
+    "services:down": "docker compose -p expense-manager -f infra/compose.yaml down",
+    "services:wait:database": "node infra/scripts/wait-for-database.ts",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "eslint .",
