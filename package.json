@@ -12,6 +12,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "test": "vitest run --no-file-parallelism",
+    "test:watch": "vitest --no-file-parallelism",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "eslint .",
@@ -41,6 +43,8 @@
     "prettier": "3.7.4",
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-tailwindcss": "0.7.2",
-    "secretlint": "11.2.5"
+    "secretlint": "11.2.5",
+    "vite-tsconfig-paths": "6.0.3",
+    "vitest": "4.0.16"
   }
 }
