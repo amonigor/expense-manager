@@ -1,0 +1,33 @@
+{
+  "name": "expense-manager",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": {
+    "name": "Igor Amon",
+    "email": "amon.igorlr@gmail.com",
+    "url": "https://amonigor.dev"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint:prettier:check": "prettier --check .",
+    "lint:prettier:fix": "prettier --write .",
+    "lint:eslint:check": "eslint .",
+    "lint:eslint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "25.0.3",
+    "@types/react": "19.2.7",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.1.1",
+    "eslint-config-prettier": "10.1.8",
+    "prettier": "3.7.4"
+  }
+}
