@@ -3,6 +3,6 @@
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss"
   ],
-  "tailwindStylesheet": "./src/app/globals.css",
+  "tailwindStylesheet": "./app/globals.css",
   "organizeImportsSkipDestructiveCodeActions": true
 }
