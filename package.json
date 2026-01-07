@@ -57,11 +57,18 @@
     "eslint-config-next": "16.1.1",
     "eslint-config-prettier": "10.1.8",
     "husky": "9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "3.7.4",
     "prettier-plugin-organize-imports": "4.3.0",
     "prettier-plugin-tailwindcss": "0.7.2",
     "secretlint": "11.2.5",
     "vite-tsconfig-paths": "6.0.3",
     "vitest": "4.0.16"
+  },
+  "lint-staged": {
+    "*": [
+      "npm run lint:prettier:check",
+      "npm run lint:eslint:check"
+    ]
   }
 }
