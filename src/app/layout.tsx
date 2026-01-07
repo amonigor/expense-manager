@@ -1,7 +1,7 @@
 import { Geist } from "next/font/google";
 
+import "@/app/globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import "./globals.css";
 
 const geist = Geist({
   subsets: ["latin"],

@@ -18,6 +18,6 @@ export default defineConfig({
     ssl: process.env.NODE_ENV === "production",
   },
   dialect: "postgresql",
-  schema: "./infra/db/schema",
-  out: "./infra/db/migrations",
+  schema: "./src/infra/db/schema",
+  out: "./src/infra/db/migrations",
 });
