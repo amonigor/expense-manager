@@ -1,9 +1,11 @@
 import { sql } from "drizzle-orm";
-import { NextResponse } from "next/server";
+import { Hono } from "hono";
 
 import database from "@/infra/db/database";
 
-export async function GET() {
+const app = new Hono();
+
+app.get("/", async (c) => {
   const updatedAt = new Date().toISOString();
 
   const db = database.createClient();
@@ -23,17 +25,16 @@ export async function GET() {
 
   db.$client.end();
 
-  return NextResponse.json(
-    {
-      updated_at: updatedAt,
-      dependencies: {
-        database: {
-          version: databaseVersion,
-          max_connections: Number(databaseMaxConnections),
-          opened_connections: databaseOpenedConnections,
-        },
+  return c.json({
+    updated_at: updatedAt,
+    dependencies: {
+      database: {
+        version: databaseVersion,
+        max_connections: Number(databaseMaxConnections),
+        opened_connections: databaseOpenedConnections,
       },
     },
-    { status: 200 },
-  );
-}
+  });
+});
+
+export default app;
